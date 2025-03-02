@@ -1,60 +1,59 @@
-/* style.css */
 * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
-  }
-  body {
+}
+body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background: linear-gradient(135deg, #f0f8ff, #e6f7ff);
     color: #333;
     padding: 20px;
-  }
-  .container {
+}
+.container {
     max-width: 900px;
     margin: 0 auto;
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-  }
-  h1, h2, h3 {
+}
+h1, h2, h3 {
     text-align: center;
     margin-bottom: 20px;
-  }
-  .info {
+}
+.info {
     margin-bottom: 20px;
     line-height: 1.6;
-  }
-  fieldset {
+}
+fieldset {
     border: 1px solid #ccc;
     border-radius: 8px;
     margin-bottom: 20px;
     padding: 15px 20px;
     background-color: #fafafa;
-  }
-  legend {
+}
+legend {
     font-size: 1.2em;
     font-weight: bold;
     padding: 0 10px;
     color: #007BFF;
-  }
-  label {
+}
+label {
     display: block;
     margin-bottom: 8px;
     font-weight: 500;
-  }
-  input[type="number"] {
+}
+input[type="number"] {
     width: 100%;
     padding: 8px;
     border: 1px solid #aaa;
     border-radius: 4px;
     margin-bottom: 10px;
-  }
-  input[type="checkbox"] {
+}
+input[type="checkbox"] {
     margin-right: 8px;
-  }
-  button {
+}
+button {
     display: block;
     width: 100%;
     padding: 12px;
@@ -66,11 +65,11 @@
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-bottom: 20px;
-  }
-  button:hover {
+}
+button:hover {
     background-color: #0056b3;
-  }
-  #resultado {
+}
+#resultado {
     text-align: center;
     font-size: 1.2em;
     padding: 15px;
@@ -79,8 +78,7 @@
     border: 1px solid #ccc;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
     margin-top: 20px;
-  }
-  ul {
+}
+ul {
     margin-left: 20px;
-  }
-  
+}

@@ -1,10 +1,9 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Cálculo de Nota Final del Módulo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <!-- Vinculación al archivo CSS -->
+  <title>Cálculo de Nota Final del Módulo</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -19,8 +18,8 @@
       </ul>
       <p>Marca la casilla "Tema impartido" para incluir el tema en el cálculo. Si no se imparte, su porcentaje se redistribuye proporcionalmente entre los temas restantes.</p>
     </div>
-    
-    <!-- UT1 -->
+
+    <!-- Definición de los temas (UT1 a UT6) -->
     <fieldset id="UT1">
       <legend>UT1 (12% original)</legend>
       <label><input type="checkbox" id="UT1_impartido" checked> Tema impartido</label>
@@ -31,10 +30,9 @@
       <label for="UT1_tareas">Tareas (promedio):</label>
       <input type="number" id="UT1_tareas" step="0.01" min="0" max="10">
     </fieldset>
-    
-    <!-- UT2 -->
+
     <fieldset id="UT2">
-      <legend>UT2 (26% original)</legend>
+      <legend>UT2 (20% original)</legend>
       <label><input type="checkbox" id="UT2_impartido" checked> Tema impartido</label>
       <label for="UT2_teorico">Test Teórico:</label>
       <input type="number" id="UT2_teorico" step="0.01" min="0" max="10">
@@ -43,10 +41,9 @@
       <label for="UT2_tareas">Tareas (promedio):</label>
       <input type="number" id="UT2_tareas" step="0.01" min="0" max="10">
     </fieldset>
-    
-    <!-- UT3 -->
+
     <fieldset id="UT3">
-      <legend>UT3 (12% original)</legend>
+      <legend>UT3 (15% original)</legend>
       <label><input type="checkbox" id="UT3_impartido" checked> Tema impartido</label>
       <label for="UT3_teorico">Test Teórico:</label>
       <input type="number" id="UT3_teorico" step="0.01" min="0" max="10">
@@ -55,10 +52,9 @@
       <label for="UT3_tareas">Tareas (promedio):</label>
       <input type="number" id="UT3_tareas" step="0.01" min="0" max="10">
     </fieldset>
-    
-    <!-- UT4 -->
+
     <fieldset id="UT4">
-      <legend>UT4 (15% original)</legend>
+      <legend>UT4 (18% original)</legend>
       <label><input type="checkbox" id="UT4_impartido" checked> Tema impartido</label>
       <label for="UT4_teorico">Test Teórico:</label>
       <input type="number" id="UT4_teorico" step="0.01" min="0" max="10">
@@ -67,8 +63,7 @@
       <label for="UT4_tareas">Tareas (promedio):</label>
       <input type="number" id="UT4_tareas" step="0.01" min="0" max="10">
     </fieldset>
-    
-    <!-- UT5 -->
+
     <fieldset id="UT5">
       <legend>UT5 (15% original)</legend>
       <label><input type="checkbox" id="UT5_impartido" checked> Tema impartido</label>
@@ -79,8 +74,7 @@
       <label for="UT5_tareas">Tareas (promedio):</label>
       <input type="number" id="UT5_tareas" step="0.01" min="0" max="10">
     </fieldset>
-    
-    <!-- UT6 -->
+
     <fieldset id="UT6">
       <legend>UT6 (20% original)</legend>
       <label><input type="checkbox" id="UT6_impartido" checked> Tema impartido</label>
@@ -91,13 +85,11 @@
       <label for="UT6_tareas">Tareas (promedio):</label>
       <input type="number" id="UT6_tareas" step="0.01" min="0" max="10">
     </fieldset>
-    
+
     <button onclick="calcularModulo()">Calcular Nota Final del Módulo</button>
-    
     <div id="resultado"></div>
   </div>
-  
-  <!-- Vinculación al archivo JavaScript -->
+
   <script src="main.js"></script>
 </body>
 </html>
