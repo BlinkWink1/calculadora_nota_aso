@@ -18,6 +18,7 @@ function calcularModulo() {
     let notasTemas = {};
     let pesosUsados = {};
     let sumaPesos = 0;
+    let temasImpartidos = [];
 
     // Se recorre cada tema y se calcula la nota si está impartido.
     temas.forEach(function(tema) {
@@ -30,20 +31,34 @@ function calcularModulo() {
             notasTemas[tema] = notaTema;
             pesosUsados[tema] = pesosOriginales[tema];
             sumaPesos += pesosOriginales[tema];
+            temasImpartidos.push(tema); // Guardar los temas impartidos
         }
     });
 
-    // Redistribuir los pesos de los temas no impartidos proporcionalmente.
+    // Redistribuir los pesos de los temas no impartidos proporcionalmente entre los impartidos.
+    if (temasImpartidos.length > 0) {
+        let sumaPesosImpartidos = temasImpartidos.reduce(function(suma, tema) {
+            return suma + pesosOriginales[tema];
+        }, 0);
+
+        // Recalcular los pesos efectivos para los temas impartidos.
+        for (const tema of temasImpartidos) {
+            let pesoRedistribuido = pesosOriginales[tema] + ((100 - sumaPesosImpartidos) / temasImpartidos.length);
+            pesosUsados[tema] = pesoRedistribuido;
+        }
+    }
+
+    // Calcular la nota final del módulo considerando los pesos redistribuidos
     let notaModulo = 0;
     for (const tema in notasTemas) {
-        let pesoEfectivo = (pesosUsados[tema] / sumaPesos) * 100;
+        let pesoEfectivo = pesosUsados[tema];
         notaModulo += notasTemas[tema] * (pesoEfectivo / 100);
     }
 
     // Mostrar los resultados en pantalla
     let resultadoHTML = "<h3>Resultados:</h3>";
     for (const tema in notasTemas) {
-        resultadoHTML += `<p>${tema}: ${notasTemas[tema].toFixed(2)} (Peso efectivo: ${((pesosUsados[tema] / sumaPesos) * 100).toFixed(2)}%)</p>`;
+        resultadoHTML += `<p>${tema}: ${notasTemas[tema].toFixed(2)} (Peso efectivo: ${pesosUsados[tema].toFixed(2)}%)</p>`;
     }
     resultadoHTML += `<h2>Nota Final del Módulo: ${notaModulo.toFixed(2)}</h2>`;
     document.getElementById("resultado").innerHTML = resultadoHTML;
